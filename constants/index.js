@@ -29,9 +29,3 @@ export const design = [
     mediaSrc: "https://cdn.sanity.io/images/gtd4w1cq/production/f3406ca7f5d3ceda9277280020ba2c471d08e1e6-4096x2305.jpg?auto=format"
   },
 ]
-// {
-//   id: "design-004",
-//   title: "Built to last⁹",
-//   desc: "Headphone (1) is tested against a full set of hardware reliability standards to ensure it performs under pressure. That includes over 50 tests covering headband extension, drop impact, sweat, twist, and temperature resistance. Each component is carefully engineered and tested for strength to ensure consistent reliability with every use.",
-//   mediaSrc: "https://stream.mux.com/qTxXdmn2zUGK01QlxL9LvNZlad01djY00FKzUUwdmyr00CU.m3u8?min_resolution=1080p&redundant_streams=true"
-// },

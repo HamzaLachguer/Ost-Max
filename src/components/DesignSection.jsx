@@ -18,7 +18,7 @@ const DesignSection = () => {
       ...design, 
       design[0]
     ]
-  }, [design])
+  }, [])
 
   const slideRef = useRef(null)
 
@@ -83,7 +83,7 @@ const DesignSection = () => {
           >
             {designSlides.map((item, index) => (
               <li
-                key={item.id + index}
+                key={`${item.id} - ${index}`}
                 className="flex-none h-screen w-full overflow-hidden"
               >
                 <img 
