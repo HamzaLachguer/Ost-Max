@@ -62,92 +62,99 @@ const DesignSection = () => {
 
   return (
     <section 
-      className="h-screen w-full relative"
+      className="flex flex-col gap-8"
     >
-      <div 
-        className="overflow-hidden"
-      >
-        <ul 
-          ref={slideRef}
-          className={clsx(
-            "flex gap-0",
-            isAnimating ? "transition-transform duration-500 ease-in-out" : ""
-          )}
-          style={{transform: `translateX(-${slideIndex * 100}%)`}}
-        >
-          {designSlides.map((item, index) => (
-            <li
-              key={item.id + index}
-              className="flex-none h-screen w-full overflow-hidden"
-            >
-              <img 
-                className="h-full w-full object-center object-cover"
-                src={item.mediaSrc} 
-                alt={item.title} 
-              />
-            </li>
-          ))}
-        </ul>
+      <div className="flex flex-col gap-2 px-4 md:px-10 lg:px-20">
+        <p className="text-xs md:text-sm leading-5 text-[#CCCDC7]">Design (1)</p>
+        <h2 className="text-3xl md:text-5xl font-medium">A radically original <br /> composition </h2>
       </div>
 
-      <div
-        className="absolute z-20 bottom-0 left-0 w-full flex flex-col items-center gap-4 p-4 md:pb-8"
-      >
-        <div
-          className={clsx(
-            "w-full md:max-w-125 p-2 md:p-5 rounded-2xl md:rounded-3xl bg-[#E5E7EB] flex flex-col justify-end gap-8",
-            isMoreShown && "h-[calc(100vh-108px)] md:h-[calc(100vh-136px)] transition-300"
-          )}
+      <div className="h-screen w-full relative">
+        <div 
+          className="overflow-hidden"
         >
-          <h3 className="text-lg md:text-[26px] md:leading-8 leading-6 tracking-tight font-medium">{slide.title}</h3>
-
-          <div className="flex flex-col gap-4">
-            <p className={clsx(
-                "text-xs md:text-sm font-normal",
-                isMoreShown ? "" : "line-clamp-2",
-              )}>{slide.desc}</p>
-
-            <button
-              type="button"
-              className="text-xs md:text-sm leading-4 md:leading-5 font-medium w-fit px-3 py-1 md:py-1.5 bg-white rounded-full"
-              onClick={() => setIsMoreShown(!isMoreShown)}
-            >{isMoreShown ? "Less" : "More"}</button>
-          </div>
+          <ul 
+            ref={slideRef}
+            className={clsx(
+              "flex gap-0",
+              isAnimating ? "transition-transform duration-500 ease-in-out" : ""
+            )}
+            style={{transform: `translateX(-${slideIndex * 100}%)`}}
+          >
+            {designSlides.map((item, index) => (
+              <li
+                key={item.id + index}
+                className="flex-none h-screen w-full overflow-hidden"
+              >
+                <img 
+                  className="h-full w-full object-center object-cover"
+                  src={item.mediaSrc} 
+                  alt={item.title} 
+                />
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <ul 
-          className="flex gap-2 w-fit"
+        <div
+          className="absolute z-20 bottom-0 left-0 w-full flex flex-col items-center gap-4 p-4 md:pb-8"
         >
-          {design.map((item, index) => (
-            <li 
-              key={item.id}
-              role="button"
-              className={clsx(
-                "h-2 rounded-full cursor-pointer transition-300",
-                index === realIndex ? "bg-[#585a5a] w-6" : "bg-[#d8d9d9] w-2"
-              )}
-              onClick={() => {
-                setIsAnimating(true);
-                setSlideIndex(index + 1);
-              }}
-            ></li>
-          ))}
-        </ul>
-      </div>
+          <div
+            className={clsx(
+              "w-full md:max-w-125 p-2 md:p-5 rounded-2xl md:rounded-3xl bg-[#E5E7EB] flex flex-col justify-end gap-8",
+              isMoreShown && "h-[calc(100vh-108px)] md:h-[calc(100vh-136px)] transition-300"
+            )}
+          >
+            <h3 className="text-lg md:text-[26px] md:leading-8 leading-6 tracking-tight font-medium">{slide.title}</h3>
 
-      <div className="absolute top-0 z-10 h-full w-full grid grid-cols-2">
-        <div
-          role="button"
-          aria-label="previous slide"
-          className="h-full w-full"
-          onClick={() => previousSlide()}
-        ></div>
-        <div
-          role="button"
-          aria-label="next slide"
-          className="h-full w-full"
-          onClick={() => nextSlide()}
-        ></div>
+            <div className="flex flex-col gap-4">
+              <p className={clsx(
+                  "text-xs md:text-sm font-normal",
+                  isMoreShown ? "" : "line-clamp-2",
+                )}>{slide.desc}</p>
+
+              <button
+                type="button"
+                className="text-xs md:text-sm leading-4 md:leading-5 font-medium w-fit px-3 py-1 md:py-1.5 bg-white rounded-full"
+                onClick={() => setIsMoreShown(!isMoreShown)}
+              >{isMoreShown ? "Less" : "More"}</button>
+            </div>
+          </div>
+
+          <ul 
+            className="flex gap-2 w-fit"
+          >
+            {design.map((item, index) => (
+              <li 
+                key={item.id}
+                role="button"
+                className={clsx(
+                  "h-2 rounded-full cursor-pointer transition-300",
+                  index === realIndex ? "bg-[#585a5a] w-6" : "bg-[#d8d9d9] w-2"
+                )}
+                onClick={() => {
+                  setIsAnimating(true);
+                  setSlideIndex(index + 1);
+                }}
+              ></li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="absolute top-0 z-10 h-full w-full grid grid-cols-2">
+          <div
+            role="button"
+            aria-label="previous slide"
+            className="h-full w-full"
+            onClick={() => previousSlide()}
+          ></div>
+          <div
+            role="button"
+            aria-label="next slide"
+            className="h-full w-full"
+            onClick={() => nextSlide()}
+          ></div>
+        </div>
       </div>
 
     </section>

@@ -27,7 +27,7 @@ const NavBar = () => {
   return (
     <nav 
       ref={navRef}
-      className="grid grid-cols-2 md:grid-cols-3 items-center p-4 md:px-10 md:py-5 lg:px-20 fixed w-full z-50 top-0 transition-300"
+      className="flex justify-between md:grid md:grid-cols-3 items-center p-4 md:px-10 md:py-5 lg:px-20 fixed w-full z-50 top-0 transition-300"
       aria-label="Navigation menu"
       >
       <Link to="/">
