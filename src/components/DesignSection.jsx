@@ -64,10 +64,10 @@ const DesignSection = () => {
     <section 
       className="flex flex-col gap-8"
     >
-      <div className="flex flex-col gap-2 px-4 md:px-10 lg:px-20">
+      {/* <div className="flex flex-col gap-2 px-4 md:px-10 lg:px-20">
         <p className="text-xs md:text-sm leading-5 text-[#CCCDC7]">Design (1)</p>
         <h2 className="text-3xl md:text-5xl font-medium">A radically original <br /> composition </h2>
-      </div>
+      </div> */}
 
       <div className="h-screen w-full relative">
         <div 
@@ -102,12 +102,16 @@ const DesignSection = () => {
           <div
             className={clsx(
               "w-full md:max-w-125 p-2 md:p-5 rounded-2xl md:rounded-3xl bg-[#E5E7EB] flex flex-col justify-end gap-8",
-              isMoreShown && "h-[calc(100vh-108px)] md:h-[calc(100vh-136px)] transition-300"
+              isMoreShown && "h-[calc(100vh-108px)] md:h-[calc(100vh-136px)] transition-300 grid grid-rows-2"
             )}
           >
-            <h3 className="text-lg md:text-[26px] md:leading-8 leading-6 tracking-tight font-medium">{slide.title}</h3>
+            <div className={clsx(
+              isMoreShown && "flex-center"
+              )}>
+              <h3 className="text-lg md:text-[26px] md:leading-8 leading-6 tracking-tight font-medium">{slide.title}</h3>
+            </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col justify-end gap-4">
               <p className={clsx(
                   "text-xs md:text-sm font-normal",
                   isMoreShown ? "" : "line-clamp-2",
