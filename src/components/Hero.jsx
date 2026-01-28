@@ -41,7 +41,7 @@ const Hero = () => {
       <div className="relative ">
         <div
           ref={logoRef}
-          className="w-full h-fit">
+          className="w-full h-fit overflow-hidden">
           <img 
             className="h-fit w-4/5 object-center object-cover md:hidden"
             src={logoMobile} alt="Ost brand logo"
@@ -52,7 +52,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="w-full absolute left-0 top-1/4 md:top-1/8 flex-center">
+        <div className="w-full absolute left-0 top-1/4 md:top-1/8 flex-center overflow-hidden">
           <img 
             ref={productRef}
             className="h-full max-h-[500px] md:max-h-[550px] will-change-transform"
