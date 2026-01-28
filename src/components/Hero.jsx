@@ -23,7 +23,7 @@ const Hero = () => {
 
     gsap.to(productRef.current, {
       y: -100,
-      scale: 1.5,
+      scale: 2,
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: logoRef.current,
