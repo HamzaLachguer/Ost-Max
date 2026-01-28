@@ -37,7 +37,7 @@ const Hero = () => {
   }, { scope: productRef })
 
   return (
-    <section className="h-screen px-4 md:px-10 lg:px-20 pt-18 pb-5 flex flex-col justify-between">
+    <section className="h-screen px-4 md:px-10 lg:px-20 pt-18 pb-5 flex flex-col justify-between overflow-hidden">
       <div className="relative ">
         <div
           ref={logoRef}
@@ -52,7 +52,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="w-full absolute left-0 top-1/4 md:top-1/8 flex-center overflow-hidden">
+        <div className="w-full absolute left-0 top-1/4 md:top-1/8 flex-center">
           <img 
             ref={productRef}
             className="h-full max-h-[500px] md:max-h-[550px] will-change-transform"
