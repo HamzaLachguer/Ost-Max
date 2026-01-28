@@ -22,7 +22,7 @@ const Hero = () => {
     });
 
     gsap.to(productRef.current, {
-      y: -100,
+      y: -50,
       scale: 2,
       ease: "power1.inOut",
       scrollTrigger: {
